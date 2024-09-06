@@ -1,38 +1,286 @@
-.App {
-  text-align: center;
-}
+/* 반응형을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+  }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .col {
+      flex-basis: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* body 설정 */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Verdana", sans-serif;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* nav */
+.navbar {
+  display: flex;
+  background-color: #121212;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.nav_logo img {
+  height: 40px;
+}
+
+.nav_links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav_links li {
+  display: inline-block;
+}
+
+.nav_links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.nav_links a:hover {
+  color: #ff00c8;
+}
+
+.club, .earn {
+  font-weight: bold;
+}
+
+.nav_btn {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn, .language-btn {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #ff00c8;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #ff1493;
+}
+
+.language-btn {
+  background-color: #333;
+}
+
+.language-btn:hover {
+  background-color: #444;
+}
+
+/* header(타이틀 부분) */
+.header p {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  font-size: 45px;
+  margin: 0;
+  /* !!!!!text에 그라데이션 넣기!!!!! */
+  color: transparent; /* 글자 색상을 투명하게 만들기 */
+  background-image: linear-gradient(140deg, #ff69b4, #090b8f); /* 배경에 그라데이션 색상 */
+  -webkit-background-clip: text; /* text만 배경을 클리핑 */
+  background-clip: text; /* 지원하는 브라우저에 적용하기 */
+  margin: 0;
+  padding: 5px 0;
+}
+
+.container {
+  justify-content: center;
+  margin: 0 500px;
+}
+
+/* body - 첫번째 카드 상단 부분 */
+.container_header {
+  display: flex;
+  align-items: center;
+}
+
+.container_header h2 {
+  font-size: 26px;
+  color: #fff;
+}
+
+.container_btn {
+  display: flex;
+  margin-left: auto;
+}
+
+.container_btn button {
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+.container_btn_clover {
+  background-color: #91c790;
+  border: 1px solid #567756;
+  transition: background-color 0.3s ease;
+}
+
+.container_btn_whale {
+  background-color: #9fc5e8;
+  border: 1px solid #3d85c6;
+  transition: background-color 0.3s ease;
+}
+
+.container_btn_clover:hover {
+  background-color: #567756;
+}
+
+.container_btn_whale:hover {
+  background-color: #3d85c6;
+}
+
+/* body - 첫번째 카드 하단 부분(왼-이미지 오-detail) */
+.container_box {
+  background-color: #444;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.container_box p {
+  margin: 0;
+}
+
+.container_box_top {
+  background-color: #333;
+  color: #fff;
+  height: 40px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+}
+
+.container_box_bottom {
+  display: flex;
+  gap: 20px;
+  background-color: #121212;
+  height: 200px;
+}
+
+.container_box_bottom_left img {
+  height: 100%;
+  width: 300px;
+  object-fit: cover;
+  border-bottom-left-radius: 10px; /* 이미지에도 같은 곡선 적용 */
+}
+
+.container_box_bottom_right {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.container_box_bottom_right > div {
+  flex: 1;
+  background-color: #121212;
+  color: #fff;
+  padding: 10px;
+}
+
+.container_box_bottom_right_1 {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.container_box_bottom_right_1_icon {
+  display: flex;
+  gap: 10px;
+}
+
+.container_box_bottom_right_2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container_box_bottom_right_3 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container_box_bottom_right_4 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* body - 두번째 카드(header/이미지/detail 순) */
+.container_box2 {
+  background-color: #333;
+  color: #fff;
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.container_box2 img {
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+
+.container_box2 > div {
+  padding: 0 20px;
+}
+
+.container_box2_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_box2_main {
+  background-color: #121212;
+}
+
+.container_box2_main_icon {
+  display: flex;
+  gap: 10px;
+}
+
+/* Progress Bar 스타일 */
+.progress-bar {
+  position: relative;
+  width: 80%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* 진행 중인 색상 부분 */
+.progress-fill {
+  height: 100%;
+  width: 70%;
+  background: linear-gradient(90deg, #ff69b4, #00ffff);
+  border-radius: 5px;
 }
